@@ -9,8 +9,8 @@ int notmain ( void ) {
     unsigned int ra;
 
     ra=GET32(RCCBASE+0x2C);
-    ra|=1<<0; //enable port c
-    PUT32(RCCBASE+0x18,ra);
+    ra|=1<<0; //enable port A
+    PUT32(RCCBASE+0x2C,ra);
     //moder
     ra=GET32(GPIOABASE+0x00);
     ra&=~(3<<0); //PA0
