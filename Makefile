@@ -14,10 +14,10 @@ clean:
 flash.o : flash.s
 	$(ARMGNU)-as $(AOPS) flash.s -o flash.o
 
-blinker01.o : hvlog2.c
+hvlog2.o : hvlog2.c
 	$(ARMGNU)-gcc $(COPS) -mthumb -c hvlog2.c -o hvlog2.o
 
-blinker01.bin : flash.ld flash.o hvlog2.o
+hvlog2.bin : flash.ld flash.o hvlog2.o
 	$(ARMGNU)-ld -o hvlog2.elf -T flash.ld flash.o hvlog2.o
 	$(ARMGNU)-objdump -D hvlog2.elf > hvlog2.list
 	$(ARMGNU)-objcopy hvlog2.elf hvlog2.bin -O binary
