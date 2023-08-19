@@ -28,7 +28,7 @@ reset:
     b hang
 .thumb_func
 hang:   b .
-
+.align
 .thumb_func
 .globl PUT32
 PUT32:
@@ -45,3 +45,4 @@ GET32:
 .globl dummy
 dummy:
     bx lr
+.end
